@@ -1,0 +1,131 @@
+import { StyleSheet } from "react-native";
+
+export default StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#e8e5e0',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  logo: {
+    width: 40,
+    height: 40,
+  },
+  pressable: {
+    position: 'absolute',
+    top: 55,
+    left: 40,
+  },
+    titulo: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#2f2623',
+    top: -75,
+    left: -105,
+  },
+  subtitulo: {
+    fontSize: 16,
+    marginBottom: 20,
+    color: '#2f2623',
+    top: -90,
+    left: -86,
+  },
+  subtitulo2: {
+    fontSize: 16,
+    marginBottom: 5,
+    color: '#2f2623',
+    alignSelf: 'flex-start',
+    left: 50,
+    top: -80,
+  },
+    subtitulo3: {
+    fontSize: 14,
+    color: '#2f2623',
+    left: -20,
+  },
+  subtitulo4: {
+    fontSize: 14,
+    color: '#2f2623',
+    marginHorizontal: 10,
+  },
+  input: {
+    width: '80%',
+    height: 60,
+    borderColor: '#ccc',
+    borderWidth: 0.1,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    marginBottom: 10,
+    backgroundColor: '#e3e7f3',
+    top: -80,
+  },
+  checkboxContainer: {
+    flexDirection: 'row',
+    marginBottom: 20,
+    top: -80,
+    width: '80%',
+    alignItems: 'center',
+    gap: 28,
+    left: 4,
+  },
+  forgotPassword: {
+    marginLeft: 10,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '53%',
+    marginBottom: 10,
+    top: -60,
+    left: -52,
+    gap: 20,
+  },
+  button: {
+    backgroundColor: '#14cb74',
+    paddingVertical: 23,
+    paddingHorizontal: 45,
+    borderRadius: 15,
+  },
+  button2: {
+    backgroundColor: '#fff',
+    paddingVertical: 23,
+    paddingHorizontal: 45,
+    borderRadius: 15,
+    borderWidth: 1,
+    borderColor: '#14cb74',
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  buttonText2: {
+    color: '#14cb74',
+    fontWeight: 'bold',
+  },
+  divisor: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  line: {
+    flex: 1,
+    height: 1,
+    backgroundColor: '#ccc',
+  },
+  socialButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '45%',
+  },
+  socialButton: {
+    backgroundColor: '#fff',
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+  },
+  socialLogo: {
+    width: 60,
+    height: 60,
+  },    
+});

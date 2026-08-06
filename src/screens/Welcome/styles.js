@@ -36,8 +36,7 @@ export default StyleSheet.create({
     position: 'relative',
   },
   button2: {
-    backgroundColor: '#e8e5e0',
-    padding: 12,
+    backgroundColor: '#fff',
     borderRadius: 5,
     marginTop: 10,
     width: 350,
