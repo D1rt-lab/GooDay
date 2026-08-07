@@ -7,16 +7,33 @@ import React, { useState } from 'react';
 export default function Login() {
     const navigation = useNavigation();
     const [email, setEmail] = useState("");
-    const [senha,setSenha] = useState("");
-    const [ativo, setAtivo] = useState(true);
+    const [senha, setSenha] = useState("");
+    const [errorMensage, setErrorMensage] = useState(false);
+    const [checkMensage, setCheckMensage] = useState(false);
+    const [lembrar, setLembrar] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    function verificacao(){
-        if(email != "adm" && senha != "1234"){
-            //Mensagem ruim
-        }else{
-            // boa
+    function verificacao() {
+        if (loading) return;
+
+        setLoading(true);
+
+        if (email === "adm@gmail.com" && senha === "1234") {
+            setCheckMensage(true);
+
+            setTimeout(() => {
+                setCheckMensage(false);
+                setLoading(false);
+                navigation.replace("Home");
+            }, 3000);
+        } else {
+            setErrorMensage(true);
+
+            setTimeout(() => {
+                setErrorMensage(false);
+                setLoading(false);
+            }, 3000);
         }
-
     }
 
     return (
@@ -29,27 +46,30 @@ export default function Login() {
             <Text style={styles.subtitulo}>com E-mail e senha</Text>
 
             <Text style={styles.subtitulo2}>E-mail</Text>
-            <TextInput 
-            style={styles.input} 
-            placeholder="Digite seu e-mail"
-            maxLength={50}
-            onChangeText={setEmail}
-            value={email} />
+
+            <TextInput
+                style={styles.input}
+                placeholder="Digite seu e-mail"
+                maxLength={50}
+                onChangeText={setEmail}
+                value={email} />
 
             <Text style={styles.subtitulo2}>Senha</Text>
-            <TextInput 
-            style={styles.input} 
-            placeholder="Digite sua senha" 
-            secureTextEntry
-            maxLength={20}
-            onChangeText={setSenha}
-            value={senha} />
+
+            <TextInput
+                style={styles.input}
+                placeholder="Digite sua senha"
+                secureTextEntry
+                maxLength={20}
+                onChangeText={setSenha}
+                value={senha} />
 
             <View style={styles.checkboxContainer}>
+
                 <Checkbox
-                    value={false}
-                    onValueChange={() => { }}
-                    color={false ? '#4630EB' : undefined}
+                    value={lembrar}
+                    onValueChange={setLembrar}
+                    color={false ? '#5d4eb1' : undefined}
                 />
                 <Text style={styles.subtitulo3}>Lembrar senha</Text>
 
@@ -60,14 +80,23 @@ export default function Login() {
             </View>
 
             <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.button}>
+
+                <TouchableOpacity style={styles.button} onPress={verificacao}>
                     <Text style={styles.buttonText}>Acessar</Text>
                 </TouchableOpacity>
+
                 <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('Cadastro')}>
                     <Text style={styles.buttonText2}>Cadastrar</Text>
                 </TouchableOpacity>
 
             </View>
+
+            {errorMensage && (
+                <Text style={styles.subtitulo5}>Coloque uma senha e/ou email correto!!</Text>
+            )}
+            {checkMensage && (
+                <Text style={styles.subtitulo6}>Seu login deu certo!!</Text>
+            )}
 
             <View style={styles.divisor}>
                 <View style={styles.line} />

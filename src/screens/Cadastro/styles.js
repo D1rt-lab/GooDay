@@ -45,6 +45,17 @@ export default StyleSheet.create({
     color: '#2f2623',
     alignSelf: 'flex-start',
   },
+  subtitulo5: {
+    fontSize: 20,
+    top: -40,
+    color: '#fc0000',
+  },
+  subtitulo6: {
+    fontSize: 20,
+    top: -35,
+    color: '#3a8f3a',
+    left: 32,
+  },
   input: {
     height: 60,
     width: 330,
